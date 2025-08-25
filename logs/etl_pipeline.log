@@ -1,0 +1,103 @@
+2025-08-25 21:19:05,895 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:19:08,080 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:19:08,081 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:19:29,975 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:19:30,075 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:19:30,232 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:21:10,847 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:21:12,180 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:21:12,181 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:21:13,773 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:21:13,864 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:21:14,020 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:21:14,348 [INFO] extraction.extraction_functional: data/yellow_tripdata_2022-01.parquet : extracted 2463931 records from the parquet file.
+2025-08-25 21:21:14,356 [INFO] extraction.extraction_functional: data/h9gi-nx95.csv : extracted 500 records from the csv file
+2025-08-25 21:21:17,362 [DEBUG] urllib3.util.retry: Incremented Retry for (url='/resource/h9gi-nx95.json?$limit=500'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-08-25 21:21:17,363 [WARNING] urllib3.connectionpool: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=3)")': /resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:21:17,363 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (2): data.cityofnewyork.us:443
+2025-08-25 21:21:18,909 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:21:18,909 [INFO] extraction.extraction_functional: 200 - ok : while invoking the api https://data.cityofnewyork.us/resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:21:18,910 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:21:20,271 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:21:20,281 [INFO] extraction.extraction_functional: 200 - extracted 500 records from the api.
+2025-08-25 21:21:20,305 [INFO] extraction.extraction_functional: data/movies.sqlite - read 4773 records from the table: movies
+2025-08-25 21:21:20,307 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:21:20,455 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:21:20,540 [ERROR] root: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) : - exception 'tuple' object is not callable encoutered while reading data from page : https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
+Traceback (most recent call last):
+  File "/home/ruairi/Documents/projects/pipelines/extraction/extraction_functional.py", line 92, in source_data_from_webpage
+    logger.info(f"{url} - read {df.shape()[0]} records from the page: {url}")
+                                ^^^^^^^^^^
+TypeError: 'tuple' object is not callable
+2025-08-25 21:21:53,750 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:21:53,915 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:21:56,405 [INFO] extraction.extraction_functional: data/yellow_tripdata_2022-01.parquet : extracted 2463931 records from the parquet file.
+2025-08-25 21:21:56,410 [INFO] extraction.extraction_functional: data/h9gi-nx95.csv : extracted 500 records from the csv file
+2025-08-25 21:21:59,415 [DEBUG] urllib3.util.retry: Incremented Retry for (url='/resource/h9gi-nx95.json?$limit=500'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-08-25 21:21:59,415 [WARNING] urllib3.connectionpool: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=3)")': /resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:21:59,416 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (3): data.cityofnewyork.us:443
+2025-08-25 21:22:00,871 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:22:00,871 [INFO] extraction.extraction_functional: 200 - ok : while invoking the api https://data.cityofnewyork.us/resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:22:00,871 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:22:03,166 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:22:03,175 [INFO] extraction.extraction_functional: 200 - extracted 500 records from the api.
+2025-08-25 21:22:03,200 [INFO] extraction.extraction_functional: data/movies.sqlite - read 4773 records from the table: movies
+2025-08-25 21:22:03,201 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:22:03,350 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:22:03,439 [ERROR] root: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) : - exception 'tuple' object is not callable encoutered while reading data from page : https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
+Traceback (most recent call last):
+  File "/home/ruairi/Documents/projects/pipelines/extraction/extraction_functional.py", line 92, in source_data_from_webpage
+    logger.info(f"{url} - read {df.shape()[0]} records from the page: {url}")
+                                ^^^^^^^^^^
+TypeError: 'tuple' object is not callable
+2025-08-25 21:26:04,035 [INFO] extraction.extraction_functional: data/yellow_tripdata_2022-01.parquet : extracted 2463931 records from the parquet file.
+2025-08-25 21:26:04,040 [INFO] extraction.extraction_functional: data/h9gi-nx95.csv : extracted 500 records from the csv file
+2025-08-25 21:26:04,040 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:26:05,402 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:26:05,402 [INFO] extraction.extraction_functional: 200 - ok : while invoking the api https://data.cityofnewyork.us/resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:26:05,403 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:26:13,027 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:26:13,035 [INFO] extraction.extraction_functional: 200 - extracted 500 records from the api.
+2025-08-25 21:26:13,059 [INFO] extraction.extraction_functional: data/movies.sqlite - read 4773 records from the table: movies
+2025-08-25 21:26:13,060 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:26:13,225 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:26:13,328 [ERROR] root: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) : - exception 'tuple' object is not callable encoutered while reading data from page : https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
+Traceback (most recent call last):
+  File "/home/ruairi/Documents/projects/pipelines/extraction/extraction_functional.py", line 91, in source_data_from_webpage
+    logger.info(f"{url} - read {df.shape()[0]} records from the page: {url}")
+                                ^^^^^^^^^^
+TypeError: 'tuple' object is not callable
+2025-08-25 21:26:53,686 [INFO] extraction.extraction_functional: data/yellow_tripdata_2022-01.parquet : extracted 2463931 records from the parquet file.
+2025-08-25 21:26:53,690 [INFO] extraction.extraction_functional: data/h9gi-nx95.csv : extracted 500 records from the csv file
+2025-08-25 21:26:56,694 [DEBUG] urllib3.util.retry: Incremented Retry for (url='/resource/h9gi-nx95.json?$limit=500'): Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2025-08-25 21:26:56,695 [WARNING] urllib3.connectionpool: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=3)")': /resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:26:56,695 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (2): data.cityofnewyork.us:443
+2025-08-25 21:27:00,119 [DEBUG] urllib3.util.retry: Incremented Retry for (url='/resource/h9gi-nx95.json?$limit=500'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2025-08-25 21:27:00,119 [WARNING] urllib3.connectionpool: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='data.cityofnewyork.us', port=443): Read timed out. (read timeout=3)")': /resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:27:00,120 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (3): data.cityofnewyork.us:443
+2025-08-25 21:27:01,496 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:27:01,496 [INFO] extraction.extraction_functional: 200 - ok : while invoking the api https://data.cityofnewyork.us/resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:27:01,497 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:27:02,903 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:27:02,913 [INFO] extraction.extraction_functional: 200 - extracted 500 records from the api.
+2025-08-25 21:27:02,936 [INFO] extraction.extraction_functional: data/movies.sqlite - read 4773 records from the table: movies
+2025-08-25 21:27:02,937 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:27:03,078 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:27:03,167 [ERROR] root: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) : - exception 'tuple' object is not callable encoutered while reading data from page : https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
+Traceback (most recent call last):
+  File "/home/ruairi/Documents/projects/pipelines/extraction/extraction_functional.py", line 91, in source_data_from_webpage
+    logger.info(f"{url} - read {df.shape[0]} records from the page: {url}")
+                                ^^^^^^^^^^
+TypeError: 'tuple' object is not callable
+2025-08-25 21:27:16,589 [INFO] extraction.extraction_functional: data/yellow_tripdata_2022-01.parquet : extracted 2463931 records from the parquet file.
+2025-08-25 21:27:16,594 [INFO] extraction.extraction_functional: data/h9gi-nx95.csv : extracted 500 records from the csv file
+2025-08-25 21:27:16,594 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:27:18,266 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:27:18,267 [INFO] extraction.extraction_functional: 200 - ok : while invoking the api https://data.cityofnewyork.us/resource/h9gi-nx95.json?$limit=500
+2025-08-25 21:27:18,267 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-08-25 21:27:25,028 [DEBUG] urllib3.connectionpool: https://data.cityofnewyork.us:443 "GET /resource/h9gi-nx95.json?$limit=500 HTTP/1.1" 200 None
+2025-08-25 21:27:25,036 [INFO] extraction.extraction_functional: 200 - extracted 500 records from the api.
+2025-08-25 21:27:25,060 [INFO] extraction.extraction_functional: data/movies.sqlite - read 4773 records from the table: movies
+2025-08-25 21:27:25,061 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): en.wikipedia.org:443
+2025-08-25 21:27:25,210 [DEBUG] urllib3.connectionpool: https://en.wikipedia.org:443 "GET /wiki/List_of_countries_by_GDP_(nominal) HTTP/1.1" 200 56159
+2025-08-25 21:27:25,311 [INFO] extraction.extraction_functional: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) - read 222 records from the page: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)
