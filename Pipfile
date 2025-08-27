@@ -13,6 +13,8 @@ pyarrow = "*"
 certifi = "*"
 lxml = "*"
 html5lib = "*"
+psycopg2 = "*"
+python-decouple = "*"
 
 [dev-packages]
 
